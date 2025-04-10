@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clasificador de Pingüinos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .form-control {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #444;
+        }
+        .form-control::placeholder {
+            color: #aaa;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .info-text {
+            font-size: 0.9rem;
+            color: #bbbbbb;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .alert-info {
+            background-color: #1a1a2e;
+            border-color: #2e2e4e;
+            color: #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">🔍 Clasificador de Sexo de Pingüinos</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label class="form-label">Edad</label>
+                <input type="number" step="any" class="form-control" name="Age" value="40.0" required>
+                <small class="info-text">Digite la edad</small>
+
+                <input type="number" step="any" class="form-control" name="Sex" value="40.0" required>
+                <small class="info-text">Digite sexo</small>
+
+                <input type="number" step="any" class="form-control" name="ChestPainType" value="40.0" required>
+                <small class="info-text">Digite Tipo de dolor de pecho (ATA, NAP, ASY, TA)</small>
+
+                <input type="number" step="any" class="form-control" name="Cholesterol" value="40.0" required>
+                <small class="info-text">Digite Nivel de colesterol</small>
+
+                <input type="number" step="any" class="form-control" name="FastingBS" value="40.0" required>
+                <small class="info-text">Digite Azúcar en sangre en ayunas (1 si > 120 mg/dl)</small>
+
+                <input type="number" step="any" class="form-control" name="MaxHR" value="40.0" required>
+                <small class="info-text">Digite Frecuencia cardíaca máxima alcanzada </small>
+
+                <input type="number" step="any" class="form-control" name="ExerciseAngina" value="40.0" required>
+                <small class="info-text">Digite Angina inducida por ejercicio (Y o N)</small>
+
+                <input type="number" step="any" class="form-control" name="Oldpeak" value="40.0" required>
+                <small class="info-text">Digite Depresión del ST</small>
+
+                <input type="number" step="any" class="form-control" name="ST_Slope" value="40.0" required>
+                <small class="info-text">Digite Pendiente del segmento ST (Up, Flat, Down)</small>
+
+                <input type="number" step="any" class="form-control" name="RestingECG" value="40.0" required>
+                <small class="info-text">Digite Resultado del electrocardiograma </small>
+
+                <input type="number" step="any" class="form-control" name="RestingBP" value="40.0" required>
+                <small class="info-text">Digite Presión arterial en reposo</small>
+
+                
+
+
+            </div>
+            <div class="form-group">
+                <label class="form-label">Profundidad del pico (mm)</label>
+                <input type="number" step="any" class="form-control" name="bill_depth" value="18.0" required>
+                <small class="info-text">Grosor del pico en su base. Es útil para el análisis morfológico.</small>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Longitud de la aleta (mm)</label>
+                <input type="number" step="any" class="form-control" name="flipper_length" value="190.0" required>
+                <small class="info-text">Longitud del ala desde la unión con el cuerpo hasta la punta.</small>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Masa corporal (g)</label>
+                <input type="number" step="any" class="form-control" name="body_mass" value="3750.0" required>
+                <small class="info-text">Peso total del pingüino. Una característica clave en la predicción.</small>
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">Predecir sexo</button>
+        </form>
+
+        {% if prediction %}
+            <div class="alert alert-info mt-4 text-center">
+                🔎 Predicción: <strong>{{ prediction }}</strong>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
