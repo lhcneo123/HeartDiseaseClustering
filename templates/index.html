@@ -37,70 +37,105 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4 text-center">🔍 Clasificador de Sexo de Pingüinos</h2>
+        <h2 class="mb-4 text-center">🫀 Clasificador de Enfermedad Cardíaca</h2>
         <form method="POST">
             <div class="form-group">
                 <label class="form-label">Edad</label>
-                <input type="number" step="any" class="form-control" name="Age" value="40.0" required>
-                <small class="info-text">Digite la edad</small>
-
-                <input type="number" step="any" class="form-control" name="Sex" value="40.0" required>
-                <small class="info-text">Digite sexo</small>
-
-                <input type="number" step="any" class="form-control" name="ChestPainType" value="40.0" required>
-                <small class="info-text">Digite Tipo de dolor de pecho (ATA, NAP, ASY, TA)</small>
-
-                <input type="number" step="any" class="form-control" name="Cholesterol" value="40.0" required>
-                <small class="info-text">Digite Nivel de colesterol</small>
-
-                <input type="number" step="any" class="form-control" name="FastingBS" value="40.0" required>
-                <small class="info-text">Digite Azúcar en sangre en ayunas (1 si > 120 mg/dl)</small>
-
-                <input type="number" step="any" class="form-control" name="MaxHR" value="40.0" required>
-                <small class="info-text">Digite Frecuencia cardíaca máxima alcanzada </small>
-
-                <input type="number" step="any" class="form-control" name="ExerciseAngina" value="40.0" required>
-                <small class="info-text">Digite Angina inducida por ejercicio (Y o N)</small>
-
-                <input type="number" step="any" class="form-control" name="Oldpeak" value="40.0" required>
-                <small class="info-text">Digite Depresión del ST</small>
-
-                <input type="number" step="any" class="form-control" name="ST_Slope" value="40.0" required>
-                <small class="info-text">Digite Pendiente del segmento ST (Up, Flat, Down)</small>
-
-                <input type="number" step="any" class="form-control" name="RestingECG" value="40.0" required>
-                <small class="info-text">Digite Resultado del electrocardiograma </small>
-
-                <input type="number" step="any" class="form-control" name="RestingBP" value="40.0" required>
-                <small class="info-text">Digite Presión arterial en reposo</small>
-
-                
-
-
+                <input type="number" step="any" class="form-control" name="Age" value="54" required>
+                <small class="info-text">Edad del paciente (en años)</small>
             </div>
+    
             <div class="form-group">
-                <label class="form-label">Profundidad del pico (mm)</label>
-                <input type="number" step="any" class="form-control" name="bill_depth" value="18.0" required>
-                <small class="info-text">Grosor del pico en su base. Es útil para el análisis morfológico.</small>
+                <label class="form-label">Sexo</label>
+                <select class="form-control" name="Sex" required>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+                <small class="info-text">Seleccione el sexo del paciente</small>
             </div>
+    
             <div class="form-group">
-                <label class="form-label">Longitud de la aleta (mm)</label>
-                <input type="number" step="any" class="form-control" name="flipper_length" value="190.0" required>
-                <small class="info-text">Longitud del ala desde la unión con el cuerpo hasta la punta.</small>
+                <label class="form-label">Tipo de Dolor de Pecho</label>
+                <select class="form-control" name="ChestPainType" required>
+                    <option value="ATA">Angina típica</option>
+                    <option value="NAP">Angina atípica</option>
+                    <option value="ASY">Asintomático</option>
+                    <option value="TA">Dolor no anginoso</option>
+                </select>
+                <small class="info-text">Seleccione el tipo de dolor de pecho</small>
             </div>
+    
             <div class="form-group">
-                <label class="form-label">Masa corporal (g)</label>
-                <input type="number" step="any" class="form-control" name="body_mass" value="3750.0" required>
-                <small class="info-text">Peso total del pingüino. Una característica clave en la predicción.</small>
+                <label class="form-label">Presión Arterial en Reposo</label>
+                <input type="number" step="any" class="form-control" name="RestingBP" value="130" required>
+                <small class="info-text">Presión arterial en reposo (mm Hg)</small>
             </div>
-            <button type="submit" class="btn btn-custom btn-block">Predecir sexo</button>
+    
+            <div class="form-group">
+                <label class="form-label">Colesterol</label>
+                <input type="number" step="any" class="form-control" name="Cholesterol" value="250" required>
+                <small class="info-text">Nivel de colesterol en sangre (mg/dL)</small>
+            </div>
+    
+            <div class="form-group">
+                <label class="form-label">Azúcar en sangre en ayunas</label>
+                <select class="form-control" name="FastingBS" required>
+                    <option value="1">Mayor a 120 mg/dL</option>
+                    <option value="0">120 mg/dL o menos</option>
+                </select>
+                <small class="info-text">¿Nivel de glucosa en ayunas alto?</small>
+            </div>
+    
+            <div class="form-group">
+                <label class="form-label">Resultado del Electrocardiograma</label>
+                <select class="form-control" name="RestingECG" required>
+                    <option value="Normal">Normal</option>
+                    <option value="ST">Anormalidad ST-T</option>
+                    <option value="LVH">Hipertrofia ventricular izquierda</option>
+                </select>
+                <small class="info-text">Resultado del ECG en reposo</small>
+            </div>
+    
+            <div class="form-group">
+                <label class="form-label">Frecuencia Cardíaca Máxima</label>
+                <input type="number" step="any" class="form-control" name="MaxHR" value="150" required>
+                <small class="info-text">Frecuencia máxima alcanzada durante el ejercicio</small>
+            </div>
+    
+            <div class="form-group">
+                <label class="form-label">Angina Inducida por Esfuerzo</label>
+                <select class="form-control" name="ExerciseAngina" required>
+                    <option value="Y">Sí</option>
+                    <option value="N">No</option>
+                </select>
+                <small class="info-text">¿Experimentó angina durante el esfuerzo físico?</small>
+            </div>
+    
+            <div class="form-group">
+                <label class="form-label">Depresión del ST</label>
+                <input type="number" step="any" class="form-control" name="Oldpeak" value="1.2" required>
+                <small class="info-text">Depresión del ST inducida por ejercicio respecto al reposo</small>
+            </div>
+    
+            <div class="form-group">
+                <label class="form-label">Pendiente del ST</label>
+                <select class="form-control" name="ST_Slope" required>
+                    <option value="Up">Ascendente</option>
+                    <option value="Flat">Plana</option>
+                    <option value="Down">Descendente</option>
+                </select>
+                <small class="info-text">Pendiente del segmento ST durante esfuerzo</small>
+            </div>
+    
+            <button type="submit" class="btn btn-custom btn-block mt-3">Predecir enfermedad cardíaca</button>
         </form>
-
-        {% if prediction %}
+    
+        {% if prediction is not none %}
             <div class="alert alert-info mt-4 text-center">
-                🔎 Predicción: <strong>{{ prediction }}</strong>
+                🩺 Resultado de predicción: <strong>{{ prediction }}</strong>
             </div>
         {% endif %}
     </div>
+    
 </body>
 </html>
